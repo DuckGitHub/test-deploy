@@ -15,10 +15,10 @@ export default class CreateNote extends Component {
   };
 
   async componentDidMount() {
-    /*const res = await axios.get("http://localhost:4000/api/users");
+    const res = await axios.get("https://fist-deploy.herokuapp.com/api/users");
     this.setState({ users: res.data.map(user => user.username), userSelected: res.data[0].username });
     if (this.props.match.params.id) {
-      const res = await axios.get('http://localhost:4000/api/notes/'+ this.props.match.params.id)
+      const res = await axios.get('https://fist-deploy.herokuapp.com/api/notes/'+ this.props.match.params.id)
       const {title, author, date, content} = res.data;
       console.log(res.data);
       
@@ -30,7 +30,7 @@ export default class CreateNote extends Component {
         date: new Date(date),
         _id: this.props.match.params.id
       })
-    }*/
+    }
   }
 
   onSubmit = async e => {
@@ -39,12 +39,12 @@ export default class CreateNote extends Component {
     const newNote = { title, content, date, author: userSelected };
 
     if (this.state.editing) {
-      await axios.put('http://localhost:4000/api/notes/' + this.state._id, newNote)
+      await axios.put('https://fist-deploy.herokuapp.com/api/notes/' + this.state._id, newNote)
     } else {
-      await axios.post("http://localhost:4000/api/notes", newNote);
+      await axios.post("https://fist-deploy.herokuapp.com/api/notes", newNote);
     }
 
-    window.location.href ='/'
+    window.location.href ='/test-deploy'
   };
 
   onInputChange = e => {

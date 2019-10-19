@@ -13,12 +13,12 @@ export default class NotesList extends Component {
   }
 
   getNotes = async () => {
-    /*const res = await axios.get('http://localhost:4000/api/notes')
-    this.setState({notes: res.data})*/
+    const res = await axios.get('https://fist-deploy.herokuapp.com/api/notes')
+    this.setState({notes: res.data})
   }
 
   deleteNote = async(id) => {
-    await axios.delete('http://localhost:4000/api/notes/' + id)
+    await axios.delete('https://fist-deploy.herokuapp.com/api/notes/' + id)
     await this.getNotes()
   }
 
@@ -33,7 +33,7 @@ export default class NotesList extends Component {
                   <h5>
                     {note.title}
                   </h5>
-                  <Link className="btn btn-secondary" to={"/edit/" + note._id} >Edit</Link>
+                  <Link className="btn btn-secondary" to={"/test-deploy/edit/" + note._id} >Edit</Link>
                 </div>
                 <div className="card-body">
                   <p>
