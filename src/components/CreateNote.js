@@ -15,7 +15,7 @@ export default class CreateNote extends Component {
   };
 
   async componentDidMount() {
-    const res = await axios.get("http://localhost:4000/api/users");
+    /*const res = await axios.get("http://localhost:4000/api/users");
     this.setState({ users: res.data.map(user => user.username), userSelected: res.data[0].username });
     if (this.props.match.params.id) {
       const res = await axios.get('http://localhost:4000/api/notes/'+ this.props.match.params.id)
@@ -30,7 +30,7 @@ export default class CreateNote extends Component {
         date: new Date(date),
         _id: this.props.match.params.id
       })
-    }
+    }*/
   }
 
   onSubmit = async e => {
